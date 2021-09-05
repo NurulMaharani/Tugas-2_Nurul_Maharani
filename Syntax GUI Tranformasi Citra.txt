@@ -1,0 +1,39 @@
+GUI TRANSFORMASI CITRA
+
+%keluar
+delete(handles.figure1)
+
+%Buka Gambar
+axes(handles.axes1)
+a = imread('Rani.jpg');
+imshow(a)
+
+%Citra Keabuan
+a = imread('Rani.jpg');
+I_greyKom = 0.4*a(:,:,1)+0.32*a(:,:,2)+0.28*a(:,:,3);
+axes(handles.axes2)
+imshow(I_greyKom)
+
+%Biner
+global a
+a = imread('Rani.jpg');
+I_bw = im2bw(a,0.5);
+axes(handles.axes3)
+imshow(I_bw)
+
+%Brightness
+a = imread('Rani.jpg');
+I_greyKom = 0.4*a(:,:,1)+0.32*a(:,:,2)+0.28*a(:,:,3);
+tBrig = 150;
+I_brig = I_greyKom+tBrig;
+axes(handles.axes4)
+imshow(I_brig)
+
+%Contrass
+a = imread('Rani.jpg');
+I_greyKom = 0.4*a(:,:,1)+0.32*a(:,:,2)+0.28*a(:,:,3);
+tCon = 75;
+I_con = I_greyKom + tCon;
+axes(handles.axes5)
+imshow(I_con)
+
